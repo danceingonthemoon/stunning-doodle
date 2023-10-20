@@ -1,5 +1,6 @@
 shopping_trolley = {"Fruits": ["apple", "banana", "blueberry", "strawberry", "raseperry"], "Food": [
     "soy_milk", "bread", "lettuce", "butter"], "Drinks": ["water", "coca_cola", "beer"]}
+
 shopping_list = {}
 
 # Assign IDs to the items
@@ -67,10 +68,11 @@ def buy_items():
             print(f"Invalid quantity.")
     else:
         add_to_trolley()
+        # print("Invalid item selection. Please choose from the available items.")
 
 
 def remove_items_of_shopping_list():
-    display_shopping_list()
+    # display_shopping_list()
     remove_item = input("Remove the items : ").lower()
     if remove_item in shopping_list:
         del shopping_list[remove_item]

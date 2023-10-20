@@ -1,5 +1,6 @@
 shopping_trolley = {"Fruits": ["apple", "banana", "blueberry", "strawberry", "raseperry"], "Food": [
     "soy_milk", "bread", "lettuce", "butter"], "Drinks": ["water", "coca_cola", "beer"]}
+
 shopping_list = {}
 
 # Assign IDs to the items
@@ -67,10 +68,11 @@ def buy_items():
             print(f"Invalid quantity.")
     else:
         add_to_trolley()
+        # print("Invalid item selection. Please choose from the available items.")
 
 
 def remove_items_of_shopping_list():
-    display_shopping_list()
+    # display_shopping_list()
     remove_item = input("Remove the items : ").lower()
     if remove_item in shopping_list:
         del shopping_list[remove_item]
@@ -86,7 +88,7 @@ try:
     while not (key_press == "q"):
         print("\n***************************Welcome to Coco Grocery***************************\n")
         for key, value in key_list.items():
-            print("\n**********Press", key, "To", value, "**********")
+            print("\nPress", key, "To", value)
         user_input = input("\nEnter your options :  \n").lower()
         if user_input == "d":
             print("Current selection: display items in the shopping trolley\n")

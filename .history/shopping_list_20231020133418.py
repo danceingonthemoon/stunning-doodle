@@ -1,5 +1,6 @@
 shopping_trolley = {"Fruits": ["apple", "banana", "blueberry", "strawberry", "raseperry"], "Food": [
     "soy_milk", "bread", "lettuce", "butter"], "Drinks": ["water", "coca_cola", "beer"]}
+
 shopping_list = {}
 
 # Assign IDs to the items
@@ -24,22 +25,26 @@ def display_shopping_list():
 
 
 def add_to_trolley():
+
+    # for category in shopping_trolley:
+    #     if item in category:
+    #         print(f"{item} is already in the shopping trolley.\n")
+    #         return
+    # print("The item is not in the shopping trolley. You can add it to an existing category or create a new category.\n")
     new_category = input(
         "Enter the category name or choose an existing category:\n ")
-    new_item = input("Enter the item for this category:\n")
+    item = input("Enter the item for this category:\n")
     for category, item in shopping_trolley.items():
         print(f"{category}{item}")
         # Assuming the category name is the first item in the list
     if new_category in shopping_trolley:
-        shopping_trolley[new_category].append(new_item)
         print(
-            f"{new_item} has been added to the shopping trolley in the '{new_category}' category.\n")
-    else:
-        shopping_trolley[new_category] = [new_item]
-        print(
-            f"No such category '{new_category}' exists. Creating a new category.")
-        print(
-            f"{new_item} has been added to the shopping trolley in the new {new_category}")
+            f"{item} has been added to the shopping trolley in the '{new_category}' category.\n")
+        return
+    print(
+        f"No such category '{new_category}' exists. Creating a new category.")
+    shopping_trolley([new_category, item])
+    print(f"{item} has been added to the shopping trolley in the new '{new_category}' category.")
 
 
 def buy_items():
@@ -67,10 +72,11 @@ def buy_items():
             print(f"Invalid quantity.")
     else:
         add_to_trolley()
+        # print("Invalid item selection. Please choose from the available items.")
 
 
 def remove_items_of_shopping_list():
-    display_shopping_list()
+    # display_shopping_list()
     remove_item = input("Remove the items : ").lower()
     if remove_item in shopping_list:
         del shopping_list[remove_item]
@@ -84,9 +90,9 @@ try:
                 "b": "Buy itmes", "s": "Show your shopping list", "r": "Remove items"}
     key_press = False
     while not (key_press == "q"):
-        print("\n***************************Welcome to Coco Grocery***************************\n")
+        print("\n---------------------Welcome to Coco Grocery---------------------\n")
         for key, value in key_list.items():
-            print("\n**********Press", key, "To", value, "**********")
+            print("\nPress", key, "To", value)
         user_input = input("\nEnter your options :  \n").lower()
         if user_input == "d":
             print("Current selection: display items in the shopping trolley\n")

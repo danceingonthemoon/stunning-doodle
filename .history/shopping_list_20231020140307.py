@@ -1,5 +1,6 @@
 shopping_trolley = {"Fruits": ["apple", "banana", "blueberry", "strawberry", "raseperry"], "Food": [
     "soy_milk", "bread", "lettuce", "butter"], "Drinks": ["water", "coca_cola", "beer"]}
+
 shopping_list = {}
 
 # Assign IDs to the items
