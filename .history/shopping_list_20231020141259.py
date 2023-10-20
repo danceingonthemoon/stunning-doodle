@@ -38,7 +38,7 @@ def add_to_trolley():
         print(
             f"{new_item} has been added to the shopping trolley in the new {new_category}")
     for category, item in shopping_trolley.items():
-        print(f"{category} : {item}")
+        print(f"{category}{item}")
 
 
 def buy_items():

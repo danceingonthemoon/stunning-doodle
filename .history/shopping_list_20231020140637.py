@@ -2,9 +2,10 @@ shopping_trolley = {"Fruits": ["apple", "banana", "blueberry", "strawberry", "ra
     "soy_milk", "bread", "lettuce", "butter"], "Drinks": ["water", "coca_cola", "beer"]}
 shopping_list = {}
 
+# Assign IDs to the items
+
 
 def display_items():
-    # Assign IDs to the items
     cate_id = 000
     for category, items in shopping_trolley.items():
         cate_id += 100
@@ -26,7 +27,9 @@ def add_to_trolley():
     new_category = input(
         "Enter the category name or choose an existing category:\n ")
     new_item = input("Enter the item for this category:\n")
-    # Assuming the new_category is in the shopping_trolley
+    for category, item in shopping_trolley.items():
+        print(f"{category}{item}")
+        # Assuming the category name is the first item in the list
     if new_category in shopping_trolley:
         shopping_trolley[new_category].append(new_item)
         print(
@@ -37,8 +40,6 @@ def add_to_trolley():
             f"No such category '{new_category}' exists. Creating a new category.")
         print(
             f"{new_item} has been added to the shopping trolley in the new {new_category}")
-    for category, item in shopping_trolley.items():
-        print(f"{category} : {item}")
 
 
 def buy_items():

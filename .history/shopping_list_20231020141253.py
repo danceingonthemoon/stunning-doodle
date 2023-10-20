@@ -37,8 +37,8 @@ def add_to_trolley():
             f"No such category '{new_category}' exists. Creating a new category.")
         print(
             f"{new_item} has been added to the shopping trolley in the new {new_category}")
-    for category, item in shopping_trolley.items():
-        print(f"{category} : {item}")
+        for category, item in shopping_trolley.items():
+            print(f"{category}{item}")
 
 
 def buy_items():
